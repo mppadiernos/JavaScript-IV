@@ -113,7 +113,7 @@ let anakin = new Student({
         'Robotics',
         'Sith Etiquette',
     ],
-    grade:                  99,
+    grade:                  95,
 });
 
 pace.speak();
@@ -131,3 +131,5 @@ samTorres.speak();
 samTorres.standUp('webpt11_sam');
 samTorres.isGrading(anakin);
 samTorres.debugsCode(rand, 'Html/CSS');
+
+console.log(`Pace's age is ${pace.age}, Sam's age is ${samTorres.age}, Rand's age is ${rand.age}, and Anakin's age is ${anakin.age}.`);
