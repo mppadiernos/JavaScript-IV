@@ -24,6 +24,14 @@ class Instructor extends Person {
     grade(student, subject) {
         console.log(`${student.name} receives a perfect score on ${subject}.`)
     }
+    isGrading(student) {
+        let stGrade = student.grade.toFixed(0) + Math.random();
+        if (stGrade >= 50) {
+            console.log(`${student.name} is passing with the grade of ${stGrade}%!`)
+        } else {
+            console.log(`${student.name} is failing with the grade of ${stGrade}%!`)
+        }
+    }
 }
 
 class Student extends Person {
@@ -32,6 +40,7 @@ class Student extends Person {
         this.previousBackground = stAttr.previousBackground;
         this.className          = stAttr.className;
         this.favSubjects        = stAttr.favSubjects;
+        this.grade              = stAttr.grade;
     }
     listsSubjects() {
         console.log(this.favSubjects);
@@ -80,6 +89,7 @@ const rand = new Student({
         'Web Fundamentals',
         'ServerSide Administration',
     ],
+    grade:                  46,
 });
 
 const samTorres = new TeamLead({
@@ -94,6 +104,7 @@ pace.speak();
 pace.demo('Robotics');
 pace.grade(rand, 'Useless Trivia for the New Century');
 console.log(pace.catchPhrase);
+console.log(pace.isGrading(rand));
 
 rand.speak();
 rand.listsSubjects();
