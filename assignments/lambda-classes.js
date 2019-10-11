@@ -100,7 +100,21 @@ let rand = new Student({
     grade:                  46,
 });
 
-
+let anakin = new Student({
+    name:                   'Anakin',
+    age:                    'Immortal-ish',
+    location:               'Deathstar',
+    previousBackground:     [
+        'Genius kid',
+        'Bratty Jedi',
+    ],
+    className:              'DS9000',
+    favSubjects:            [
+        'Robotics',
+        'Sith Etiquette',
+    ],
+    grade:                  99,
+});
 
 pace.speak();
 pace.demo('Robotics');
@@ -115,4 +129,5 @@ rand.sprintChallenge('Javascript Fundamentals');
 
 samTorres.speak();
 samTorres.standUp('webpt11_sam');
+samTorres.isGrading(anakin);
 samTorres.debugsCode(rand, 'Html/CSS');
