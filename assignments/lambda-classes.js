@@ -119,7 +119,6 @@ let anakin = new Student({
 pace.speak();
 pace.demo('Robotics');
 pace.grade(rand, 'Useless Trivia for the New Century');
-pace.isGrading(rand);
 console.log(pace.catchPhrase);
 
 rand.speak();
@@ -129,7 +128,9 @@ rand.sprintChallenge('Javascript Fundamentals');
 
 samTorres.speak();
 samTorres.standUp('webpt11_sam');
-samTorres.isGrading(anakin);
 samTorres.debugsCode(rand, 'Html/CSS');
+
+pace.isGrading(rand);
+samTorres.isGrading(anakin);
 
 console.log(`Pace's age is ${pace.age}, Sam's age is ${samTorres.age}, Rand's age is ${rand.age}, and Anakin's age is ${anakin.age}.`);
