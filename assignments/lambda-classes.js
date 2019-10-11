@@ -25,7 +25,7 @@ class Instructor extends Person {
         console.log(`${student.name} receives a perfect score on ${subject}.`)
     }
     isGrading(student) {
-        let stGrade = student.grade.toFixed(0) + Math.random();
+        let stGrade = (student.grade + Math.random()).toFixed(0);
         if (stGrade >= 50) {
             console.log(`${student.name} is passing with the grade of ${stGrade}%!`)
         } else {
@@ -67,7 +67,7 @@ class TeamLead extends Instructor {
     }
 }
 
-const pace = new Instructor({
+let pace = new Instructor({
     name:                   'Pace',
     age:                    'Nicely',
     location:               'Boston',
@@ -76,7 +76,15 @@ const pace = new Instructor({
     catchPhrase:            'Welcome, everybody!',
 });
 
-const rand = new Student({
+let samTorres = new TeamLead({
+    name:                   'Sam',
+    age:                    'Indeterminable',
+    location:               'California',
+    gradClassName:          'Web23',
+    favInstructor:          'Bill',
+});
+
+let rand = new Student({
     name:                   'Rand',
     age:                    'Intentionally',
     location:               'The Two Rivers',
@@ -92,19 +100,13 @@ const rand = new Student({
     grade:                  46,
 });
 
-const samTorres = new TeamLead({
-    name:                   'Sam',
-    age:                    'Indeterminable',
-    location:               'California',
-    gradClassName:          'Web23',
-    favInstructor:          'Bill',
-});
+
 
 pace.speak();
 pace.demo('Robotics');
 pace.grade(rand, 'Useless Trivia for the New Century');
+pace.isGrading(rand);
 console.log(pace.catchPhrase);
-console.log(pace.isGrading(rand));
 
 rand.speak();
 rand.listsSubjects();
